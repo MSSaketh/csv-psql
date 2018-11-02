@@ -1,7 +1,16 @@
 package com.capgemini.cox.csvpsqlDb.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class JiraCSV {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "serial")
+	private int id;
 	private String priority;
 	private String issue_key;
 	private int issue_id;
@@ -205,4 +214,13 @@ public class JiraCSV {
 	public void setCustom_field_COX_COR(String custom_field_COX_COR) {
 		this.custom_field_COX_COR = custom_field_COX_COR;
 	}
+
+//	public int getId() {
+//		return id;
+//	}
+//
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+
 }

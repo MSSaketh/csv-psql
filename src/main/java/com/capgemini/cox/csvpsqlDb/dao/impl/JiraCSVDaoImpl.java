@@ -33,30 +33,30 @@ public class JiraCSVDaoImpl extends JdbcDaoSupport implements JiraCSVDao {
 	@Override
 	public void insert(List<? extends JiraCSV> Customers) {
 		String sql = "INSERT INTO jiracsv "
-				+ "( priority, issue_key, issue_id, summary, status, created, custom_field_start_date, resolved, custom_field_Onshore_Offshore, custom_field_COX_Candidate_Level, custom_field_COX_Capgemini_Lead, custom_field_COX_Hiring_Manager, custom_field_COX_Role_Skillset,custom_field_COX_Tier_Level, custom_field_Position_Backfill_New, custom_field_Cap_SL_BU,custom_field_Opportunity_Stage, custom_field_COR, custom_field_COX_COR) VALUES ( ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?)";
+				+ "(priority, issue_key, issue_id, summary, status, created, custom_field_start_date, resolved, custom_field_Onshore_Offshore, custom_field_COX_Candidate_Level, custom_field_COX_Capgemini_Lead, custom_field_COX_Hiring_Manager, custom_field_COX_Role_Skillset,custom_field_COX_Tier_Level, custom_field_Position_Backfill_New, custom_field_Cap_SL_BU,custom_field_Opportunity_Stage, custom_field_COR, custom_field_COX_COR) VALUES ( ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?)";
 		getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
 				JiraCSV customer = Customers.get(i);
 //				ps.setLong(1, customer.getId());
-				ps.setString(1, customer.getPriority());
-				ps.setString(2, customer.getIssue_key());
-				ps.setInt(3, customer.getIssue_id());
-				ps.setString(4, customer.getSummary());
-				ps.setString(5, customer.getStatus());
-				ps.setString(6, customer.getCreated());
-				ps.setString(7, customer.getCustom_field_start_date());
-				ps.setString(8, customer.getResolved());
-				ps.setString(9, customer.getCustom_field_Onshore_Offshore());
-				ps.setString(10, customer.getCustom_field_COX_Candidate_Level());
-				ps.setString(11, customer.getCustom_field_COX_Capgemini_Lead());
-				ps.setString(12, customer.getCustom_field_COX_Hiring_Manager());
-				ps.setString(13, customer.getCustom_field_COX_Role_Skillset());
-				ps.setString(14, customer.getCustom_field_COX_Tier_Level());
-				ps.setString(15, customer.getCustom_field_Position_Backfill_New());
-				ps.setString(16, customer.getCustom_field_Cap_SL_BU());
-				ps.setString(17, customer.getCustom_field_Opportunity_Stage());
-				ps.setString(18, customer.getCustom_field_COR());
-				ps.setString(19, customer.getCustom_field_COX_COR());
+				ps.setString(2, customer.getPriority());
+				ps.setString(3, customer.getIssue_key());
+				ps.setInt(4, customer.getIssue_id());
+				ps.setString(5, customer.getSummary());
+				ps.setString(6, customer.getStatus());
+				ps.setString(7, customer.getCreated());
+				ps.setString(8, customer.getCustom_field_start_date());
+				ps.setString(9, customer.getResolved());
+				ps.setString(10, customer.getCustom_field_Onshore_Offshore());
+				ps.setString(11, customer.getCustom_field_COX_Candidate_Level());
+				ps.setString(12, customer.getCustom_field_COX_Capgemini_Lead());
+				ps.setString(13, customer.getCustom_field_COX_Hiring_Manager());
+				ps.setString(14, customer.getCustom_field_COX_Role_Skillset());
+				ps.setString(15, customer.getCustom_field_COX_Tier_Level());
+				ps.setString(16, customer.getCustom_field_Position_Backfill_New());
+				ps.setString(17, customer.getCustom_field_Cap_SL_BU());
+				ps.setString(18, customer.getCustom_field_Opportunity_Stage());
+				ps.setString(19, customer.getCustom_field_COR());
+				ps.setString(20, customer.getCustom_field_COX_COR());
 			}
 
 			public int getBatchSize() {
@@ -74,7 +74,8 @@ public class JiraCSVDaoImpl extends JdbcDaoSupport implements JiraCSVDao {
 		List<JiraCSV> result = new ArrayList<JiraCSV>();
 		for (Map<String, Object> row : rows) {
 			JiraCSV customer = new JiraCSV();
-//			customer.setId((int) row.get("id"));
+//			System.out.println(customer.getId());
+//			customer.setId(customer.getId());
 			customer.setPriority((String) row.get("Priority"));
 			customer.setIssue_key((String) row.get("Issue_key"));
 //			customer.setIssue_id((int) row.get("Issue_id"));

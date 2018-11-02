@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS jiracsv;
 
 CREATE TABLE jiracsv  (
+	id SERIAL,
     priority VARCHAR(200),
     issue_key VARCHAR(200),
     issue_id INT NOT NULL,
@@ -19,5 +20,6 @@ CREATE TABLE jiracsv  (
     custom_field_Cap_SL_BU VARCHAR(200),
     custom_field_Opportunity_Stage VARCHAR(200),
     custom_field_COR VARCHAR(200),
-    custom_field_COX_COR VARCHAR(200)
+    custom_field_COX_COR VARCHAR(200),
+    imported_at TIMESTAMPTZ NOT NULL DEFAULT NOW() 
 );

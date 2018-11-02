@@ -13,6 +13,7 @@ public class Processor implements ItemProcessor<JiraCSV, JiraCSV> {
 
 	@Override
 	public JiraCSV process(JiraCSV customer) throws Exception {
+//		final int id = customer.getId();
 		final String priority = customer.getPriority();
 		final String issue_key = customer.getIssue_key();
 		final int issue_id = customer.getIssue_id();
