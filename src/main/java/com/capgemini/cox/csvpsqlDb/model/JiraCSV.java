@@ -1,16 +1,11 @@
 package com.capgemini.cox.csvpsqlDb.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 public class JiraCSV {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(columnDefinition = "serial")
-	private int id;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(columnDefinition = "serial")
+//	private int id;
 	private String priority;
 	private String issue_key;
 	private int issue_id;
@@ -19,29 +14,33 @@ public class JiraCSV {
 	private String created;
 	private String custom_field_start_date;
 	private String resolved;
-	private String custom_field_Onshore_Offshore;
+	private String custom_field_Location;
 	private String custom_field_COX_Candidate_Level;
 	private String custom_field_COX_Capgemini_Lead;
 	private String custom_field_COX_Hiring_Manager;
 	private String custom_field_COX_Role_Skillset;
 	private String custom_field_COX_Tier_Level;
+	private String custom_field_COX_Tierlevel;
 	private String custom_field_Position_Backfill_New;
 	private String custom_field_Cap_SL_BU;
 	private String custom_field_Opportunity_Stage;
-	private String custom_field_COR;
+	private String custom_field_Minimun_COR_HOUR;
 	private String custom_field_COX_COR;
+	private String creater;
 
 	public JiraCSV() {
 
 	}
 
 	public JiraCSV(String priority, String issue_key, int issue_id, String summary, String status, String created,
-			String custom_field_start_date, String resolved, String custom_field_Onshore_Offshore,
+			String custom_field_start_date, String resolved, String custom_field_Location,
 			String custom_field_COX_Candidate_Level, String custom_field_COX_Capgemini_Lead,
 			String custom_field_COX_Hiring_Manager, String custom_field_COX_Role_Skillset,
-			String custom_field_COX_Tier_Level, String custom_field_Position_Backfill_New,
-			String custom_field_Cap_SL_BU, String custom_field_Opportunity_Stage, String custom_field_COR,
-			String custom_field_COX_COR) {
+			String custom_field_COX_Tier_Level, String custom_field_COX_Tierlevel,
+			String custom_field_Position_Backfill_New, String custom_field_Cap_SL_BU,
+			String custom_field_Opportunity_Stage, String custom_field_Minimun_COR_HOUR, String custom_field_COX_COR,
+			String creater) {
+		super();
 		this.priority = priority;
 		this.issue_key = issue_key;
 		this.issue_id = issue_id;
@@ -50,17 +49,19 @@ public class JiraCSV {
 		this.created = created;
 		this.custom_field_start_date = custom_field_start_date;
 		this.resolved = resolved;
-		this.custom_field_Onshore_Offshore = custom_field_Onshore_Offshore;
+		this.custom_field_Location = custom_field_Location;
 		this.custom_field_COX_Candidate_Level = custom_field_COX_Candidate_Level;
 		this.custom_field_COX_Capgemini_Lead = custom_field_COX_Capgemini_Lead;
 		this.custom_field_COX_Hiring_Manager = custom_field_COX_Hiring_Manager;
 		this.custom_field_COX_Role_Skillset = custom_field_COX_Role_Skillset;
 		this.custom_field_COX_Tier_Level = custom_field_COX_Tier_Level;
+		this.custom_field_COX_Tierlevel = custom_field_COX_Tierlevel;
 		this.custom_field_Position_Backfill_New = custom_field_Position_Backfill_New;
 		this.custom_field_Cap_SL_BU = custom_field_Cap_SL_BU;
 		this.custom_field_Opportunity_Stage = custom_field_Opportunity_Stage;
-		this.custom_field_COR = custom_field_COR;
+		this.custom_field_Minimun_COR_HOUR = custom_field_Minimun_COR_HOUR;
 		this.custom_field_COX_COR = custom_field_COX_COR;
+		this.creater = creater;
 	}
 
 	public String getPriority() {
@@ -127,12 +128,12 @@ public class JiraCSV {
 		this.resolved = resolved;
 	}
 
-	public String getCustom_field_Onshore_Offshore() {
-		return custom_field_Onshore_Offshore;
+	public String getCustom_field_Location() {
+		return custom_field_Location;
 	}
 
-	public void setCustom_field_Onshore_Offshore(String custom_field_Onshore_Offshore) {
-		this.custom_field_Onshore_Offshore = custom_field_Onshore_Offshore;
+	public void setCustom_field_Location(String custom_field_Location) {
+		this.custom_field_Location = custom_field_Location;
 	}
 
 	public String getCustom_field_COX_Candidate_Level() {
@@ -175,6 +176,14 @@ public class JiraCSV {
 		this.custom_field_COX_Tier_Level = custom_field_COX_Tier_Level;
 	}
 
+	public String getCustom_field_COX_Tierlevel() {
+		return custom_field_COX_Tierlevel;
+	}
+
+	public void setCustom_field_COX_Tierlevel(String custom_field_COX_Tierlevel) {
+		this.custom_field_COX_Tierlevel = custom_field_COX_Tierlevel;
+	}
+
 	public String getCustom_field_Position_Backfill_New() {
 		return custom_field_Position_Backfill_New;
 	}
@@ -199,12 +208,12 @@ public class JiraCSV {
 		this.custom_field_Opportunity_Stage = custom_field_Opportunity_Stage;
 	}
 
-	public String getCustom_field_COR() {
-		return custom_field_COR;
+	public String getCustom_field_Minimun_COR_HOUR() {
+		return custom_field_Minimun_COR_HOUR;
 	}
 
-	public void setCustom_field_COR(String custom_field_COR) {
-		this.custom_field_COR = custom_field_COR;
+	public void setCustom_field_Minimun_COR_HOUR(String custom_field_Minimun_COR_HOUR) {
+		this.custom_field_Minimun_COR_HOUR = custom_field_Minimun_COR_HOUR;
 	}
 
 	public String getCustom_field_COX_COR() {
@@ -215,12 +224,12 @@ public class JiraCSV {
 		this.custom_field_COX_COR = custom_field_COX_COR;
 	}
 
-//	public int getId() {
-//		return id;
-//	}
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
+	public String getCreater() {
+		return creater;
+	}
+
+	public void setCreater(String creater) {
+		this.creater = creater;
+	}
 
 }
